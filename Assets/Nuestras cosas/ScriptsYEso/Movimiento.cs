@@ -3,18 +3,20 @@ using System.Collections.Generic;
 
 using UnityEngine;
 using UnityEngine.InputSystem;
-[RequireComponent(typeof(CharacterController))]
+
 public class Movimiento : MonoBehaviour
 {
     // Start is called before the first frame update
-        private CharacterController controller;
+
+        private Rigidbody2D rb;
     public float playerSpeed = 2.0f;
     private Vector2 movimientoInput= Vector2.zero;
     private bool atacado=false;
   
     void Start()
     {
-        controller = gameObject.GetComponent<CharacterController>();
+       
+        rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
     public void OnMove(InputAction.CallbackContext context){ //Se ejecuta cuando el jugador Se mueve. EL contexto será un Vector2
@@ -30,6 +32,7 @@ public class Movimiento : MonoBehaviour
     void Update()
     {
         Vector3 move = new Vector3(movimientoInput.x, movimientoInput.y, 0);
-         controller.Move(move * Time.deltaTime * playerSpeed);
+
+         rb.velocity= move * playerSpeed;
     }
 }
