@@ -13,13 +13,20 @@ public class Movimiento : MonoBehaviour
     public GameObject hitBox; 
     private Rigidbody2D rb;
     public float playerSpeed = 2.0f;
-    private Vector2 movimientoInput= Vector2.zero;
-    private bool atacado=false;
+    public float playerSpeedPieza = 1.5f;
+    public float tiempoAturdidoEmpujado= 0.5f;
+    public float tiempoAturdidoGolpeado=0.75f;
+    public float tiempoRecargaAtaque=1f;
+    private bool llevaPieza=false;
+
+    private float tiempodeAtaqueRestante;
+    private bool puedeAtacar=false;
     private bool puedeMover=true; //Se pondrá en false cuando le golpeen. Durante el golpe si le empujan y el aturdimiento
+        private Vector2 movimientoInput= Vector2.zero;
   
     void Start()
     {
-       
+       tiempodeAtaqueRestante=tiempoRecargaAtaque;
         rb = gameObject.GetComponent<Rigidbody2D>();
     }
       // Update is called once per frame
@@ -29,6 +36,12 @@ public class Movimiento : MonoBehaviour
 
         if(puedeMover){
            rb.velocity= move * playerSpeed;
+           if(!puedeAtacar && tiempodeAtaqueRestante>0){ //recargo el ataque sólo cuando se puede mover y aacar, y cuando no lo tenga cargado ya.
+                tiempodeAtaqueRestante-=Time.deltaTime;
+                if(tiempodeAtaqueRestante<=0){ //si ya no queda tiempo de recagr, podrá atacar
+                    puedeAtacar=true;
+                }
+           }
         }
         
    
@@ -39,31 +52,53 @@ public class Movimiento : MonoBehaviour
 
     }
     public void OnAttack(InputAction.CallbackContext context){
-        if(!puedeMover){ return;}
-        atacado = context.action.triggered;
+        if(!puedeAtacar){ return;}
+        Debug.Log("Ha atacado"+ gameObject.name);
+        puedeAtacar = !context.action.triggered;
         hitBox.SetActive(true);
         rb.velocity+=new Vector2(0.01f, 0.01f); //Le meto un pelin de velocidad para que haga el check de la collision (que habia un bug cuando atacabas parado).Esto no es definitivo obv, Si cambiamos el sistema de ataque quitamos esta tonteria
 
+        puedeAtacar=false;
+        tiempodeAtaqueRestante=tiempoRecargaAtaque; //inicio el contador del ataque
        
 
     }
-    public void Empujado(Vector3 posicion, float empuje){ //Cuando un enemigo o aliado le golpea y hace un empujón
-        Debug.Log("Empujado" + gameObject.name);
+    public void Empujado(Vector3 posicion, float extraempuje){ //Cuando un enemigo o aliado le golpea y hace un empujón. SIN ANIMACION
+
+
+        //Calculo del impulso
         Vector3 impulso3d= transform.position-posicion; //Cuando veamos 
         Vector3.Normalize(impulso3d); //Cojo sólo la direccion del golpe
-        impulso3d*= empuje; //Multiplico la direccion del empuje por el impulso que queremos que de
+        impulso3d*= 15+extraempuje; //Multiplico la direccion del empuje por el impulso que queremos que dé. El 15 es el empuje base
+              rb.velocity= new Vector2(impulso3d.x, impulso3d.y);
        
-        puedeMover=false; //Esto va a pasar a la corrutina
-        rb.velocity+= new Vector2(impulso3d.x, impulso3d.y);
-         StartCoroutine(TemporizadorInmovil(0.3f));
+       // Consecuencias
+        QuitarPieza();
+         StartCoroutine(TemporizadorInmovil(segundos: tiempoAturdidoEmpujado));
     }
-    public void Aturdido(){
+    public void Aturdido(float extrastun){ //Cuando un jefe o tu compañero te aturde con un golpe, aturdir y golpear se confunde en estos caso (está mal progrmado por mi parte, sorry) CON ANIMACION
+        //Aqui haced lo de la animacion
 
+        //Consecuencias
+        QuitarPieza();
+        StartCoroutine(TemporizadorInmovil(segundos: tiempoAturdidoGolpeado+extrastun));
+
+
+
+    }
+    private void QuitarPieza(){
+        if(!llevaPieza){return;}
+        llevaPieza=false;
+        
+        //Apagar todas las piezas, depende de cómo lo hagamos
+        
     }
     private IEnumerator TemporizadorInmovil(float segundos){
         puedeMover=false;
+        puedeAtacar=false;
         yield return new WaitForSeconds(segundos);
         puedeMover=true;
+        puedeAtacar=true;
 
     }
 
