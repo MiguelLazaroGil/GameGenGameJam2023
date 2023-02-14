@@ -9,7 +9,8 @@ public class Movimiento : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public GameObject hitBoxprivate Rigidbody2D rb;
+    public GameObject hitBox; 
+    private Rigidbody2D rb;
     public float playerSpeed = 2.0f;
     private Vector2 movimientoInput= Vector2.zero;
     private bool atacado=false;
