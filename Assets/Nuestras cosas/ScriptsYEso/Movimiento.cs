@@ -5,6 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 public class Movimiento : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -38,19 +39,23 @@ public class Movimiento : MonoBehaviour
 
     }
     public void OnAttack(InputAction.CallbackContext context){
+        if(!puedeMover){ return;}
         atacado = context.action.triggered;
         hitBox.SetActive(true);
-        Debug.Log("Atacado");
+        rb.velocity+=new Vector2(0.01f, 0.01f); //Le meto un pelin de velocidad para que haga el check de la collision (que habia un bug cuando atacabas parado).Esto no es definitivo obv, Si cambiamos el sistema de ataque quitamos esta tonteria
+
+       
+
     }
     public void Empujado(Vector3 posicion, float empuje){ //Cuando un enemigo o aliado le golpea y hace un empujón
-        Debug.Log("Empujado");
+        Debug.Log("Empujado" + gameObject.name);
         Vector3 impulso3d= transform.position-posicion; //Cuando veamos 
         Vector3.Normalize(impulso3d); //Cojo sólo la direccion del golpe
         impulso3d*= empuje; //Multiplico la direccion del empuje por el impulso que queremos que de
        
         puedeMover=false; //Esto va a pasar a la corrutina
         rb.velocity+= new Vector2(impulso3d.x, impulso3d.y);
-        // TemporizadorInmovil(0.3f);
+         StartCoroutine(TemporizadorInmovil(0.3f));
     }
     public void Aturdido(){
 
@@ -63,13 +68,7 @@ public class Movimiento : MonoBehaviour
     }
 
     public void OnTriggerEnter2D(Collider2D col){
-        Debug.Log("Colision");
-        if(col.gameObject.CompareTag("Player")){
-            col.gameObject.GetComponent<Movimiento>().Empujado(transform.position, 15);
-            Empujado(transform.position, 150);
-            Debug.Log("Golpeado");
-        }
-
+       // El codigo que habia aqui ahora está en el hitbox
     }
   
 }
