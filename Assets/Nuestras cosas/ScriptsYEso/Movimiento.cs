@@ -11,6 +11,7 @@ public class Movimiento : MonoBehaviour
     // Start is called before the first frame update
 
     public GameObject hitBox; 
+    
     private Rigidbody2D rb;
     public float playerSpeed = 2.0f;
     public float playerSpeedPieza = 1.5f;
@@ -35,7 +36,16 @@ public class Movimiento : MonoBehaviour
         Vector3 move = new Vector3(movimientoInput.x, movimientoInput.y, 0);
 
         if(puedeMover){
-           rb.velocity= move * playerSpeed;
+            //Cosas del movimiento
+            rb.velocity= move * playerSpeed;
+            if(move.sqrMagnitude>0.1){
+                float angle = (Mathf.Atan2(movimientoInput.y, movimientoInput.x) * Mathf.Rad2Deg)+90;
+           transform.rotation= Quaternion.Euler(0,0,angle);
+            }
+           
+
+
+           //Cosas del ataque
            if(!puedeAtacar && tiempodeAtaqueRestante>0){ //recargo el ataque sólo cuando se puede mover y aacar, y cuando no lo tenga cargado ya.
                 tiempodeAtaqueRestante-=Time.deltaTime;
                 if(tiempodeAtaqueRestante<=0){ //si ya no queda tiempo de recagr, podrá atacar

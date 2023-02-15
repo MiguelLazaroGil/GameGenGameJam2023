@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2094200959379441674}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.07, y: 0.019, z: 0.0020010644}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -124,6 +124,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03dd02c77f76a844ea3d7a0a38198627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  empuja: 0
+  extrastun: 0
+  extraempuje: 0
 --- !u!1 &6135997712848104231
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,6 +248,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitBox: {fileID: 2094200959379441674}
   playerSpeed: 4.05
+  playerSpeedPieza: 1.5
+  tiempoAturdidoEmpujado: 0.5
+  tiempoAturdidoGolpeado: 0.75
+  tiempoRecargaAtaque: 1
 --- !u!50 &4509983643854650046
 Rigidbody2D:
   serializedVersion: 4
