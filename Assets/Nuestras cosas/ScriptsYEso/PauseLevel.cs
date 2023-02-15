@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PauseLevel : MonoBehaviour
 {
-    public Button exitSi;
+    public Button Continue;
      public RectTransform ExitUI;
-    public Button exitNo;
+    public Button exit;
     // Start is called before the first frame update
     void Start()
     {
-           exitSi.onClick.AddListener(Salir_Si);
-        exitNo.onClick.AddListener(Salir_No);
+           exit.onClick.AddListener(Salir_Si);
+        Continue.onClick.AddListener(Salir_No);
     }
 
     // Update is called once per frame
@@ -32,7 +33,7 @@ public class PauseLevel : MonoBehaviour
     }
     
     public void Salir_Si(){
-        Application.Quit(0);
+        SceneManager.LoadScene(0);
     }
     public void Salir_No(){
         ExitUI.gameObject.SetActive(false);
