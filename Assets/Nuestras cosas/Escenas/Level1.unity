@@ -13622,6 +13622,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1279133920045895920, guid: cdd4af73add24e04b922416c6468c335, type: 3}
+      propertyPath: orthographic size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279133920045895920, guid: cdd4af73add24e04b922416c6468c335, type: 3}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279133920045895920, guid: cdd4af73add24e04b922416c6468c335, type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1279133920045895923, guid: cdd4af73add24e04b922416c6468c335, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -13933,6 +13945,10 @@ PrefabInstance:
     - target: {fileID: 6135997712848104282, guid: f01ed793226192d4183fe3463c05b23b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6135997712848104283, guid: f01ed793226192d4183fe3463c05b23b, type: 3}
+      propertyPath: m_DefaultActionMap
+      value: Jugador1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01ed793226192d4183fe3463c05b23b, type: 3}
@@ -39019,6 +39035,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1279133920045895920, guid: cdd4af73add24e04b922416c6468c335, type: 3}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279133920045895920, guid: cdd4af73add24e04b922416c6468c335, type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1279133920045895923, guid: cdd4af73add24e04b922416c6468c335, type: 3}
       propertyPath: m_RootOrder
       value: 1
