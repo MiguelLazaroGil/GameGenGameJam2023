@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Nuestras cosas\ScriptsYEso\GameManager.cs" />
+     <Compile Include="Assets\Nuestras cosas\ScriptsYEso\Menu.cs" />
      <Compile Include="Assets\Nuestras cosas\ScriptsYEso\Movimiento.cs" />
      <Compile Include="Assets\Nuestras cosas\ScriptsYEso\HitBoxScript.cs" />
      <Compile Include="Assets\Nuestras cosas\ScriptsYEso\PiezasScript.cs" />

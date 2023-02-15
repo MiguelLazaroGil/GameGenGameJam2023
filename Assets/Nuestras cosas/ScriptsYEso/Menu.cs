@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
@@ -17,7 +19,7 @@ public class Menu : MonoBehaviour
     }
 
     private void PlayButtonClicked() {
-        SceneManager.LoadScene(Escenas/Level1);
+        SceneManager.LoadScene(2);
     }
 
     private void ExitButtonClicked() {
