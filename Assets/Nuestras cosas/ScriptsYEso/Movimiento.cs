@@ -65,7 +65,7 @@ public class Movimiento : MonoBehaviour
         if(!puedeAtacar){ return;}
         Debug.Log("Ha atacado"+ gameObject.name);
         puedeAtacar = !context.action.triggered;
-        hitBox.SetActive(true);
+        hitBox.SetActive(true);//TODO esto hay que cambiarlo por la animción
         rb.velocity+=new Vector2(0.01f, 0.01f); //Le meto un pelin de velocidad para que haga el check de la collision (que habia un bug cuando atacabas parado).Esto no es definitivo obv, Si cambiamos el sistema de ataque quitamos esta tonteria
 
         puedeAtacar=false;
@@ -83,20 +83,20 @@ public class Movimiento : MonoBehaviour
               rb.velocity= new Vector2(impulso3d.x, impulso3d.y);
        
        // Consecuencias
-        QuitarPieza();
+   
          StartCoroutine(TemporizadorInmovil(segundos: tiempoAturdidoEmpujado));
     }
     public void Aturdido(float extrastun){ //Cuando un jefe o tu compañero te aturde con un golpe, aturdir y golpear se confunde en estos caso (está mal progrmado por mi parte, sorry) CON ANIMACION
         //Aqui haced lo de la animacion
 
         //Consecuencias
-        QuitarPieza();
+  
         StartCoroutine(TemporizadorInmovil(segundos: tiempoAturdidoGolpeado+extrastun));
 
 
 
     }
-    private void QuitarPieza(){
+    public void QuitarPieza(){
         if(!llevaPieza){return;}
         llevaPieza=false;
         
