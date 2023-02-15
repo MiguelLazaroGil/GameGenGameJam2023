@@ -11,6 +11,7 @@ public class Movimiento : MonoBehaviour
     // Start is called before the first frame update
 
     public GameObject hitBox; 
+
     
     private Rigidbody2D rb;
     public float playerSpeed = 2.0f;
@@ -64,6 +65,7 @@ public class Movimiento : MonoBehaviour
 
     }
     public void OnAttack(InputAction.CallbackContext context){
+
         if(!puedeAtacar){ return;}
         Debug.Log("Ha atacado"+ gameObject.name);
         puedeAtacar = !context.action.triggered;
@@ -73,7 +75,6 @@ public class Movimiento : MonoBehaviour
         puedeAtacar=false;
         tiempodeAtaqueRestante=tiempoRecargaAtaque; //inicio el contador del ataque
        
-
     }
     public void Empujado(Vector3 posicion, float extraempuje){ //Cuando un enemigo o aliado le golpea y hace un empujón. SIN ANIMACION
 
