@@ -1221,11 +1221,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 217292992465044680, guid: 78bb9a129d770fb4e96edc51032c4d2e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.75
+      value: 7.46
       objectReference: {fileID: 0}
     - target: {fileID: 217292992465044680, guid: 78bb9a129d770fb4e96edc51032c4d2e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.97
+      value: -3.33
       objectReference: {fileID: 0}
     - target: {fileID: 217292992465044680, guid: 78bb9a129d770fb4e96edc51032c4d2e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1263,10 +1263,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CofreCirculo
       objectReference: {fileID: 0}
-    - target: {fileID: 217292992465044687, guid: 78bb9a129d770fb4e96edc51032c4d2e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78bb9a129d770fb4e96edc51032c4d2e, type: 3}
 --- !u!1001 &3882817756825791511
@@ -1279,10 +1275,6 @@ PrefabInstance:
     - target: {fileID: 6450392851728746072, guid: f4ddf33d8318e8e4681d16bd06a583cd, type: 3}
       propertyPath: m_Name
       value: CofreCubo
-      objectReference: {fileID: 0}
-    - target: {fileID: 6450392851728746072, guid: f4ddf33d8318e8e4681d16bd06a583cd, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6450392851728746079, guid: f4ddf33d8318e8e4681d16bd06a583cd, type: 3}
       propertyPath: m_RootOrder
@@ -1387,7 +1379,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6074429067587094831, guid: f3b84137d7ae13148959d415a07ac328, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3b84137d7ae13148959d415a07ac328, type: 3}
@@ -1679,5 +1671,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7489139225382881296, guid: bfbe60c8e5bfc124fb4d1602b4c389ea, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bfbe60c8e5bfc124fb4d1602b4c389ea, type: 3}

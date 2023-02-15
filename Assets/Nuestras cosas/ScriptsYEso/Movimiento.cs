@@ -15,13 +15,14 @@ public class Movimiento : MonoBehaviour
     private Rigidbody2D rb;
     public float playerSpeed = 2.0f;
     public float playerSpeedPieza = 1.5f;
+    public float currentSpeed;
     public float tiempoAturdidoEmpujado= 0.5f;
     public float tiempoAturdidoGolpeado=0.75f;
     public float tiempoRecargaAtaque=1f;
-    private bool llevaPieza=false;
+    public bool llevaPieza=false;
 
     private float tiempodeAtaqueRestante;
-    private bool puedeAtacar=false;
+    private bool puedeAtacar=true;
     private bool puedeMover=true; //Se pondrá en false cuando le golpeen. Durante el golpe si le empujan y el aturdimiento
         private Vector2 movimientoInput= Vector2.zero;
   
@@ -29,6 +30,7 @@ public class Movimiento : MonoBehaviour
     {
        tiempodeAtaqueRestante=tiempoRecargaAtaque;
         rb = gameObject.GetComponent<Rigidbody2D>();
+        currentSpeed=playerSpeed;
     }
       // Update is called once per frame
     void Update()
@@ -37,7 +39,7 @@ public class Movimiento : MonoBehaviour
 
         if(puedeMover){
             //Cosas del movimiento
-            rb.velocity= move * playerSpeed;
+            rb.velocity= move * currentSpeed;
             if(move.sqrMagnitude>0.1){
                 float angle = (Mathf.Atan2(movimientoInput.y, movimientoInput.x) * Mathf.Rad2Deg)+90;
            transform.rotation= Quaternion.Euler(0,0,angle);
@@ -96,9 +98,17 @@ public class Movimiento : MonoBehaviour
 
 
     }
+    public void CogerPieza(){
+        llevaPieza=true;
+        puedeAtacar=false;
+        currentSpeed=playerSpeedPieza;
+        
+    }
     public void QuitarPieza(){
         if(!llevaPieza){return;}
         llevaPieza=false;
+        
+        currentSpeed=playerSpeed;
         
         //Apagar todas las piezas, depende de cómo lo hagamos
         

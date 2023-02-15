@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6074429067587094824}
   - component: {fileID: 6074429067587094825}
-  - component: {fileID: 6074429067587094830}
   m_Layer: 0
   m_Name: CofreEstrella
-  m_TagString: Untagged
+  m_TagString: Pieza
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,32 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &6074429067587094830
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6074429067587094831}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.07, y: 1.98}
-  m_EdgeRadius: 0
 --- !u!1 &6074429068142508860
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,6 +179,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6074429069135637801}
   - component: {fileID: 6074429069135637800}
+  - component: {fileID: 6660299444712650378}
   m_Layer: 0
   m_Name: PiezaEstrella
   m_TagString: Untagged
@@ -245,3 +219,29 @@ MonoBehaviour:
   posicionpadre: {x: 0, y: 0, z: 0}
   GM: {fileID: 0}
   codigo: 1
+--- !u!61 &6660299444712650378
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6074429069135637806}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.07, y: 1.98}
+  m_EdgeRadius: 0

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4251544809860450089}
   - component: {fileID: 4251544809860450088}
+  - component: {fileID: 1927925841920281029}
   m_Layer: 0
   m_Name: PiezaCubo
   m_TagString: Untagged
@@ -46,8 +47,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ubicacionobjetivo: {fileID: 0}
+  posicionpadre: {x: 0, y: 0, z: 0}
   GM: {fileID: 0}
   codigo: 1
+--- !u!61 &1927925841920281029
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4251544809860450094}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.07, y: 1.98}
+  m_EdgeRadius: 0
 --- !u!1 &4251544810066891068
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,10 +170,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4251544810618856232}
   - component: {fileID: 4251544810618856233}
-  - component: {fileID: 4251544810618856238}
   m_Layer: 0
   m_Name: CofreGenerico
-  m_TagString: Untagged
+  m_TagString: Pieza
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -218,29 +245,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &4251544810618856238
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4251544810618856239}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.07, y: 1.98}
-  m_EdgeRadius: 0
