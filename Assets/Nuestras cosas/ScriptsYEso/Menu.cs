@@ -23,7 +23,7 @@ public class Menu : MonoBehaviour
     }
 
     private void PlayButtonClicked() {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
 
     private void ExitButtonClicked() {
