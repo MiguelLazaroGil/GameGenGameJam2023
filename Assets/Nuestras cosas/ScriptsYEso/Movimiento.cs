@@ -49,7 +49,7 @@ public class Movimiento : MonoBehaviour
 
 
            //Cosas del ataque
-           if(!puedeAtacar && tiempodeAtaqueRestante>0){ //recargo el ataque sólo cuando se puede mover y aacar, y cuando no lo tenga cargado ya.
+           if(!puedeAtacar && tiempodeAtaqueRestante>0&& !llevaPieza){ //recargo el ataque sólo cuando se puede mover y aacar, y cuando no lo tenga cargado ya.
                 tiempodeAtaqueRestante-=Time.deltaTime;
                 if(tiempodeAtaqueRestante<=0){ //si ya no queda tiempo de recagr, podrá atacar
                     puedeAtacar=true;
