@@ -8,7 +8,7 @@ public class PiezasScript : MonoBehaviour
     public Transform ubicacionobjetivo;
     public Vector3 posicionpadre;
     public GameObject GM;
-    private bool piezaCogida=false;
+    public bool piezaCogida=false;
     public int codigo= 1; //Codigo de la pieza: 1cubo, 2circulo, 3 estrella 4 triangulo
     // Start is called before the first frame update
     void Start()

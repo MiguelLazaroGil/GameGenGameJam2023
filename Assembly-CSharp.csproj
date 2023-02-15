@@ -42,6 +42,7 @@
      <Compile Include="Assets\Nuestras cosas\ScriptsYEso\HitBoxScript.cs" />
      <Compile Include="Assets\Nuestras cosas\ScriptsYEso\PauseLevel.cs" />
      <Compile Include="Assets\Nuestras cosas\ScriptsYEso\PiezasScript.cs" />
+     <Compile Include="Assets\Nuestras cosas\ScriptsYEso\Flecha.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
