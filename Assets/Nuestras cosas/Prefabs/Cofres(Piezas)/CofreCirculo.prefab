@@ -49,6 +49,7 @@ MonoBehaviour:
   ubicacionobjetivo: {fileID: 0}
   posicionpadre: {x: 0, y: 0, z: 0}
   GM: {fileID: 0}
+  piezaCogida: 0
   codigo: 1
 --- !u!61 &303604016574533221
 BoxCollider2D:
