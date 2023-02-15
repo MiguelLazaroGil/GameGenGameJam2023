@@ -36,6 +36,7 @@ public class Movimiento : MonoBehaviour
       // Update is called once per frame
     void Update()
     {
+
         Vector3 move = new Vector3(movimientoInput.x, movimientoInput.y, 0);
 
         if(puedeMover){
