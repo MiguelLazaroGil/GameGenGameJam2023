@@ -35,6 +35,7 @@ public class PiezasScript : MonoBehaviour
         ubicacionobjetivo=gameObject.GetComponentInParent<Transform>(); //lo devulve al cofre original
         transform.rotation=ubicacionobjetivo.rotation;
         transform.position=ubicacionobjetivo.position;
+        piezaCogida=false;
     }
     public void entregarPlayer(){
         //Aquí habria que poner una animacion y eso.
