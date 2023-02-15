@@ -67,12 +67,15 @@ public class Movimiento : MonoBehaviour
         if(!puedeAtacar){ return;}
         Debug.Log("Ha atacado"+ gameObject.name);
         puedeAtacar = !context.action.triggered;
-        hitBox.SetActive(true);//TODO esto hay que cambiarlo por la animción
+        hitBox.SetActive(true); //TODO esto hay que cambiarlo por la animción
         rb.velocity+=new Vector2(0.01f, 0.01f); //Le meto un pelin de velocidad para que haga el check de la collision (que habia un bug cuando atacabas parado).Esto no es definitivo obv, Si cambiamos el sistema de ataque quitamos esta tonteria
 
         puedeAtacar=false;
+
+        StartCoroutine(TemporizadorAtaque(2));
+        hitBox.SetActive(false);
+
         tiempodeAtaqueRestante=tiempoRecargaAtaque; //inicio el contador del ataque
-       
 
     }
     public void Empujado(Vector3 posicion, float extraempuje){ //Cuando un enemigo o aliado le golpea y hace un empujón. SIN ANIMACION
@@ -124,6 +127,12 @@ public class Movimiento : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D col){
        // El codigo que habia aqui ahora está en el hitbox
+    }
+
+    private IEnumerator TemporizadorAtaque(float segundos){
+    puedeMover=false;
+    yield return new WaitForSeconds(segundos);
+    puedeMover=true;
     }
   
 }
