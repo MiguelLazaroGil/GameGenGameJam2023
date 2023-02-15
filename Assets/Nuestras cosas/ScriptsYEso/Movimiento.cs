@@ -11,6 +11,7 @@ public class Movimiento : MonoBehaviour
     // Start is called before the first frame update
 
     public GameObject hitBox; 
+
     
     private Rigidbody2D rb;
     public float playerSpeed = 2.0f;
@@ -48,7 +49,7 @@ public class Movimiento : MonoBehaviour
 
 
            //Cosas del ataque
-           if(!puedeAtacar && tiempodeAtaqueRestante>0){ //recargo el ataque sólo cuando se puede mover y aacar, y cuando no lo tenga cargado ya.
+           if(!puedeAtacar && tiempodeAtaqueRestante>0&& !llevaPieza){ //recargo el ataque sólo cuando se puede mover y aacar, y cuando no lo tenga cargado ya.
                 tiempodeAtaqueRestante-=Time.deltaTime;
                 if(tiempodeAtaqueRestante<=0){ //si ya no queda tiempo de recagr, podrá atacar
                     puedeAtacar=true;
@@ -64,19 +65,16 @@ public class Movimiento : MonoBehaviour
 
     }
     public void OnAttack(InputAction.CallbackContext context){
+
         if(!puedeAtacar){ return;}
         Debug.Log("Ha atacado"+ gameObject.name);
         puedeAtacar = !context.action.triggered;
-        hitBox.SetActive(true); //TODO esto hay que cambiarlo por la animción
+        hitBox.SetActive(true);//TODO esto hay que cambiarlo por la animción
         rb.velocity+=new Vector2(0.01f, 0.01f); //Le meto un pelin de velocidad para que haga el check de la collision (que habia un bug cuando atacabas parado).Esto no es definitivo obv, Si cambiamos el sistema de ataque quitamos esta tonteria
 
         puedeAtacar=false;
-
-        StartCoroutine(TemporizadorAtaque(2));
-        hitBox.SetActive(false);
-
         tiempodeAtaqueRestante=tiempoRecargaAtaque; //inicio el contador del ataque
-
+       
     }
     public void Empujado(Vector3 posicion, float extraempuje){ //Cuando un enemigo o aliado le golpea y hace un empujón. SIN ANIMACION
 
@@ -127,12 +125,6 @@ public class Movimiento : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D col){
        // El codigo que habia aqui ahora está en el hitbox
-    }
-
-    private IEnumerator TemporizadorAtaque(float segundos){
-    puedeMover=false;
-    yield return new WaitForSeconds(segundos);
-    puedeMover=true;
     }
   
 }
