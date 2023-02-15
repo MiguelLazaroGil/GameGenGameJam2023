@@ -70,7 +70,8 @@ public class Movimiento : MonoBehaviour
         if(!puedeAtacar){ return;}
         Debug.Log("Ha atacado"+ gameObject.name);
         puedeAtacar = !context.action.triggered;
-        hitBox.SetActive(true);//TODO esto hay que cambiarlo por la animción
+     //TODO esto hay que cambiarlo por la animción
+        StartCoroutine(AtaqueSprite());
         rb.velocity+=new Vector2(0.01f, 0.01f); //Le meto un pelin de velocidad para que haga el check de la collision (que habia un bug cuando atacabas parado).Esto no es definitivo obv, Si cambiamos el sistema de ataque quitamos esta tonteria
 
         puedeAtacar=false;
@@ -121,6 +122,12 @@ public class Movimiento : MonoBehaviour
         yield return new WaitForSeconds(segundos);
         puedeMover=true;
         puedeAtacar=true;
+
+    }
+    private IEnumerator AtaqueSprite(){
+           hitBox.SetActive(true);
+        yield return new WaitForSeconds(0.25f);
+           hitBox.SetActive(false);
 
     }
 
