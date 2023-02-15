@@ -42,9 +42,13 @@
      <Compile Include="Assets\Nuestras cosas\ScriptsYEso\HitBoxScript.cs" />
      <Compile Include="Assets\Nuestras cosas\ScriptsYEso\PauseLevel.cs" />
      <Compile Include="Assets\Nuestras cosas\ScriptsYEso\PiezasScript.cs" />
+<<<<<<< Updated upstream
      <Compile Include="Assets\Nuestras cosas\ScriptsYEso\Flecha.cs" />
      <Compile Include="Assets\Nuestras cosas\ScriptsYEso\AtaqueJugador.cs" />
      <Compile Include="Assets\Nuestras cosas\ScriptsYEso\camara.cs" />
+=======
+     <Compile Include="Assets\Nuestras cosas\ScriptsYEso\Scripts enemigo\mvtoenemigo.cs" />
+>>>>>>> Stashed changes
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -824,6 +828,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="NavMeshPlusEditor.csproj">
+      <Project>{3d04291d-0981-f736-2317-6a987916530b}</Project>
+      <Name>NavMeshPlusEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="NavMeshPlus.csproj">
+      <Project>{8207c0e6-e971-381b-8ce3-aff64e125f4f}</Project>
+      <Name>NavMeshPlus</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
