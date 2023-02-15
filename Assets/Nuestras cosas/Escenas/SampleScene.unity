@@ -138,6 +138,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6135997712848104231, guid: f01ed793226192d4183fe3463c05b23b, type: 3}
   m_PrefabInstance: {fileID: 1738220158}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &288633972 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6074429069135637806, guid: f3b84137d7ae13148959d415a07ac328, type: 3}
+  m_PrefabInstance: {fileID: 3998741331837029152}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &320904117
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,6 +227,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &385329721 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6450392850184413785, guid: f4ddf33d8318e8e4681d16bd06a583cd, type: 3}
+  m_PrefabInstance: {fileID: 3882817756825791511}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &407502698
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,6 +721,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e96a2cd041b6ad4f8f5809bbb4651ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &822354111 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 217292991490646222, guid: 78bb9a129d770fb4e96edc51032c4d2e, type: 3}
+  m_PrefabInstance: {fileID: 123331620465417100}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &824090814 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 217292992465044687, guid: 78bb9a129d770fb4e96edc51032c4d2e, type: 3}
@@ -810,6 +825,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &953772115 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7489139224798620688, guid: bfbe60c8e5bfc124fb4d1602b4c389ea, type: 3}
+  m_PrefabInstance: {fileID: 7489139224460264571}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1062090235
 GameObject:
   m_ObjectHideFlags: 0
@@ -1912,19 +1932,19 @@ PrefabInstance:
     - target: {fileID: 8128957853563841302, guid: 4cf007addc3aa6c4c90cbd2eea1f0d3f, type: 3}
       propertyPath: cofres.Array.data[0]
       value: 
-      objectReference: {fileID: 115765632}
+      objectReference: {fileID: 953772115}
     - target: {fileID: 8128957853563841302, guid: 4cf007addc3aa6c4c90cbd2eea1f0d3f, type: 3}
       propertyPath: cofres.Array.data[1]
       value: 
-      objectReference: {fileID: 19080575}
+      objectReference: {fileID: 385329721}
     - target: {fileID: 8128957853563841302, guid: 4cf007addc3aa6c4c90cbd2eea1f0d3f, type: 3}
       propertyPath: cofres.Array.data[2]
       value: 
-      objectReference: {fileID: 824090814}
+      objectReference: {fileID: 822354111}
     - target: {fileID: 8128957853563841302, guid: 4cf007addc3aa6c4c90cbd2eea1f0d3f, type: 3}
       propertyPath: cofres.Array.data[3]
       value: 
-      objectReference: {fileID: 1131221105}
+      objectReference: {fileID: 288633972}
     - target: {fileID: 8128957853563841303, guid: 4cf007addc3aa6c4c90cbd2eea1f0d3f, type: 3}
       propertyPath: m_Name
       value: Flecha
